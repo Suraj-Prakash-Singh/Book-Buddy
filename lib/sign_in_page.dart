@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'home_page.dart';
 
 class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
+
   @override
   _SignInPageState createState() => _SignInPageState();
 }
@@ -10,6 +12,8 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  
+  //in memory login info
   final String username = "Suraj123";
   final String password = "pass123";
 
@@ -18,15 +22,15 @@ class _SignInPageState extends State<SignInPage> {
     prefs.setString('username', _usernameController.text);
     prefs.setString('password', _passwordController.text);
 
-    print(_usernameController.value.text);
+    // print(_usernameController.value.text);
     if (_usernameController.value.text == username &&
         _passwordController.value.text == password) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } else {
-      print("Wrong username/password");
+      // print("Wrong username/password");
     }
   }
 
