@@ -12,7 +12,7 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  
+
   //in memory login info
   final String username = "Suraj123";
   final String password = "pass123";
@@ -31,6 +31,24 @@ class _SignInPageState extends State<SignInPage> {
       );
     } else {
       // print("Wrong username/password");
+      //returning an alert box which gives
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Wrong Input'),
+              content: const Text('The username or password you entered is wrong, Try Again!.'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    // Close the dialog
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Close'),
+                ),
+              ],
+            );
+          });
     }
   }
 
@@ -39,6 +57,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sign In'),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'sign_in_page.dart';
 import 'book.dart';
+import 'profile_page.dart';
 import './assets/constants.dart' as constants;
 
 class HomePage extends StatefulWidget {
@@ -67,6 +68,21 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('Book Buddy'),
           backgroundColor: Colors.blue,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                title: const Text('Profile'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
         body: Column(
           children: [
