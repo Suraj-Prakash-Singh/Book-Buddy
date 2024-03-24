@@ -1,6 +1,6 @@
 import '../book.dart';
 
-List<Book> BOOKS_LIST = [
+List<Book> booksList = [
   Book(
       title: 'Metamorphosis', 
       author: 'Franz Kafka', 

@@ -3,18 +3,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'sign_in_page.dart';
 import 'book.dart';
 import 'profile_page.dart';
-import './assets/constants.dart' as constants;
+import 'utils/constants.dart' as constants;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  // ignore: unused_field
   String _username = '';
-  final List<Book> _books = constants.BOOKS_LIST;
+  final List<Book> _books = constants.booksList;
   bool _isDarkMode = false;
   List<Book> _filteredBooks = [];
 
@@ -73,11 +74,14 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             children: <Widget>[
               ListTile(
+                leading: const Icon(Icons.account_circle),
                 title: const Text('Profile'),
+                tileColor: Colors.blue,
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ProfilePage()),
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()),
                   );
                 },
               ),

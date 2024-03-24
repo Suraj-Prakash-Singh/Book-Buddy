@@ -6,7 +6,7 @@ class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
@@ -35,6 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // const Icon(Icons.account_circle),
             Text("Username: $username"), // Display current user's name
             const SizedBox(height: 20),
             const Text(
@@ -42,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Logic to change language preference
+                //change language preference
               },
               child: const Text('Change Language'),
             ),
