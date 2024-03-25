@@ -1,3 +1,16 @@
 {
-    "languagePreference": "Español"
+    "languagePreference": "Español",
+    "signIn": "Iniciar sesión",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "searchBooks": "Buscar libros...",
+    "title": "Título",
+    "author": "Autor",
+    "profile": "Perfil",
+    "changeLang": "Cambiar idioma",
+    "logout": "Desconectar",
+    "langPref": "Preferencia de idioma",
+    "wrongInput": "Entrada incorrecta",
+    "errorMessage": "El nombre de usuario o contraseña que ingresó es incorrecto, ¡inténtelo nuevamente!",
+    "close": "Cerca"
 }

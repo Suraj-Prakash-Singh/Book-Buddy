@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final appLocale = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text('${appLocale?.profile}'),
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -44,10 +44,10 @@ class _ProfilePageState extends State<ProfilePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // const Icon(Icons.account_circle),
-            Text("Username: $username"), // Display current user's name
+            Text("${appLocale?.username}: $username"), // Display current user's name
             const SizedBox(height: 20),
             Text(
-                'Language Preference: ${appLocale?.languagePreference}'), // Display current language preference
+                '${appLocale?.langPref}: ${appLocale?.languagePreference}'), // Display current language preference
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
@@ -94,7 +94,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   MaterialPageRoute(builder: (context) => const SignInPage()),
                 ); // navigating to sign in page
               },
-              child: const Text('Sign Out'),
+              child: Text('${appLocale?.logout}'),
             ),
           ],
         ),

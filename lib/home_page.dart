@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'sign_in_page.dart';
 import 'book.dart';
@@ -62,6 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final appLocale = AppLocalizations.of(context);
     return MaterialApp(
       title: 'Book Library',
       theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
@@ -75,7 +77,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               ListTile(
                 leading: const Icon(Icons.account_circle),
-                title: const Text('Profile'),
+                title: Text("${appLocale?.profile}"),
                 tileColor: Colors.blue,
                 onTap: () {
                   Navigator.push(
@@ -97,9 +99,9 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: TextField(
                       onChanged: _searchBooks,
-                      decoration: const InputDecoration(
-                        hintText: 'Search books...',
-                        border: OutlineInputBorder(),
+                      decoration: InputDecoration(
+                        hintText: "${appLocale?.searchBooks}",
+                        border: const OutlineInputBorder(),
                       ),
                     ),
                   ),
@@ -117,8 +119,8 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   final book = _filteredBooks[index];
                   return ListTile(
-                    title: Text('Title: ${book.title}'),
-                    subtitle: Text('Author: ${book.author}'),
+                    title: Text('${appLocale?.title}: ${book.title}'),
+                    subtitle: Text('${appLocale?.author}: ${book.author}'),
                     trailing: Icon(
                       book.isAvailable ? Icons.check : Icons.close,
                       color: book.isAvailable ? Colors.green : Colors.red,

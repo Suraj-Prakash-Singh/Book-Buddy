@@ -1,8 +1,16 @@
 {
-  "hello": "Hello",
-  "welcome": "Welcome to our app",
-  "@welcome": {
-    "description": "Welcome message"
-  },
-  "languagePreference": "English"
+    "languagePreference": "English",
+    "signIn": "Sign In",
+    "username": "Username",
+    "password": "Password",
+    "searchBooks": "Search books...",
+    "title": "Title",
+    "author": "Author",
+    "profile": "Profile",
+    "changeLang": "Change Language",
+    "logout": "Sign Out",
+    "langPref": "Language Preference",
+    "wrongInput": "Wrong Input",
+    "errorMessage": "The username or password you entered is wrong, Try Again!",
+    "close": "Close"
 }

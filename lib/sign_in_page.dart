@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'home_page.dart';
 
@@ -22,7 +23,7 @@ class _SignInPageState extends State<SignInPage> {
     prefs.setString('username', _usernameController.text);
     prefs.setString('password', _passwordController.text);
 
-    // print(_usernameController.value.text);
+    //when id and pass is correct, navigate to homepage
     if (_usernameController.value.text == username &&
         _passwordController.value.text == password) {
       Navigator.pushReplacement(
@@ -30,21 +31,21 @@ class _SignInPageState extends State<SignInPage> {
         MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } else {
-      // print("Wrong username/password");
-      //returning an alert box which gives
+      //returning an alert box which shows wrong input
       showDialog(
           context: context,
           builder: (BuildContext context) {
+            final appLocale = AppLocalizations.of(context);
             return AlertDialog(
-              title: const Text('Wrong Input'),
-              content: const Text('The username or password you entered is wrong, Try Again!.'),
+              title: Text('${appLocale?.wrongInput}'),
+              content: Text('${appLocale?.errorMessage}'),
               actions: <Widget>[
                 TextButton(
                   onPressed: () {
                     // Close the dialog
                     Navigator.of(context).pop();
                   },
-                  child: const Text('Close'),
+                  child: Text('${appLocale?.close}'),
                 ),
               ],
             );
@@ -54,9 +55,10 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    final appLocale = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: Text("${appLocale?.signIn}"),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
@@ -66,22 +68,22 @@ class _SignInPageState extends State<SignInPage> {
           children: [
             TextField(
               controller: _usernameController,
-              decoration: const InputDecoration(
-                labelText: 'Username',
+              decoration: InputDecoration(
+                labelText: "${appLocale?.username}",
               ),
             ),
             const SizedBox(height: 16.0),
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
+              decoration: InputDecoration(
+                labelText: "${appLocale?.password}",
               ),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _signIn,
-              child: const Text('Sign In'),
+              child: Text("${appLocale?.signIn}"),
             ),
           ],
         ),
