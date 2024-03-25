@@ -82,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 );
               },
-              child: const Text('Change Language'),
+              child: Text('${appLocale?.changeLang}'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(

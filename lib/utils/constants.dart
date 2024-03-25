@@ -37,4 +37,20 @@ List<Book> booksList = [
       title: 'All the Sinners Bleed',
       author: 'S. A. Cosby',
       isAvailable: false),
+  Book(
+      title: 'Dune',
+      author: 'Frank Herbert',
+      isAvailable: true),
+  Book(
+      title: 'The Alchemist',
+      author: 'Paulo Coelho',
+      isAvailable: false),
+  Book(
+      title: 'As a Man Thinketh',
+      author: 'James Allen',
+      isAvailable: true),
+  Book(
+      title: 'The Art of War',
+      author: 'Sun Tzu',
+      isAvailable: true),
 ];

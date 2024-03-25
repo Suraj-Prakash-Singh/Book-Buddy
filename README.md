@@ -1,16 +1,39 @@
-# flutter_application_1
+# Book Buddy
 
-A new Flutter project.
+A Flutter project to view books in a library.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This repository contains code for Book Buddy, a flutter application I built as an assignment. Use this info to login
+- Username: **Suraj123**
+- Password: **pass123**
 
-A few resources to get you started if this is your first Flutter project:
+### Key Points:
+- In **Memory** Login (no DB).
+- **Search Bar** (Searches on book **title** and **author**).
+- **Book Availibilty** (represented by a **green tick** and **red cross**).
+- **Theme Toggle** (toggle between **dark/light** theme on homepage).
+- **Multilanguage Support** (**English** and **Spanish(espanol)** for now).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## References
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+These are the major sites that I referenced for the development:
+- https://docs.flutter.dev/get-started/codelab
+- https://flutter.dev/learn
+- https://docs.flutter.dev/ui/widgets
+- https://pub.dev
+- https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization
+- https://github.com/flutter/website/blob/main/examples/internationalization/gen_l10n_example/lib/l10n/app_en.arb
+- https://ripenapps.com/blog/building-multilingual-apps-in-flutter/
+
+Also used:
+- ChatGpt
+- StackOverflow
+
+## Images
+
+<img src="./screenshots/signin.png" alt="image" width="280" height="auto">
+<img src="./screenshots/homepage.png" alt="image" width="280" height="auto">
+<img src="./screenshots/profile.png" alt="image" width="280" height="auto">
+
+## Learnings
